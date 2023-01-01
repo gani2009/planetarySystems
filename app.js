@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
@@ -26,6 +27,6 @@ app.get('/system/:systemId', function(req, res){
 });
 
 //Start Server
-app.listen(port, function(){
+app.listen(process.env.PORT || port, function(){
   console.log("Server started on port " + port);
 });
